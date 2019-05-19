@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="main.css" />      
+    
+    <title>Testing page</title>
+</head>
+
+<body>
+<!-- topnav -->
+<svg width="100%" height="100%">
+    <!-- top bar -->    
+    <rect x="112" y="50" width="1720" height="100" fill="yellow" />    
+    <line x1="110" y1="34" x2="1850" y2="34" stroke="white" stroke-width="2" />
+    <line x1="110" y1="166" x2="1850" y2="166" stroke="white" stroke-width="2" />
+    <line x1="1850" y1="34" x2="1850" y2="166" stroke="white" stroke-width="2" />
+    <line x1="110" y1="150" x2="110" y2="1100" stroke="white" stroke-width="3" />
+    <circle cx="110" cy="100" r="65" stroke="white" stroke-width="4" fill="black" onclick="loadDoc('mainpage.html', loader)" /> 
+    <text x="95" y="105" fill="white" onclick="loadDoc('mainpage.html', loader)">HOME</text>
+    <!-- nav side circ/line -->    
+    <circle cx="30" cy="325" r="10" stroke="white" stroke-width="1.5" fill="black" /> 
+    <line x1="40" y1="325" x2="150" y2="325" stroke="white" stroke-width="1.5" />
+    <circle cx="30" cy="425" r="10" stroke="white" stroke-width="1.5" fill="black" /> 
+    <line x1="40" y1="425" x2="150" y2="425" stroke="white" stroke-width="1.5" />
+    <circle cx="30" cy="525" r="10" stroke="white" stroke-width="1.5" fill="black" /> 
+    <line x1="40" y1="525" x2="150" y2="525" stroke="white" stroke-width="1.5" />
+    <circle cx="30" cy="625" r="10" stroke="white" stroke-width="1.5" fill="black" /> 
+    <line x1="40" y1="625" x2="150" y2="625" stroke="white" stroke-width="1.5" />
+    <circle cx="30" cy="725" r="10" stroke="white" stroke-width="1.5" fill="black" /> 
+    <line x1="40" y1="725" x2="150" y2="725" stroke="white" stroke-width="1.5" />
+    <!-- button obj -->
+    <path id="svg" d="M52 305 L175 305 L200 350 L52 350 L52 305 Z" fill="yellow" onclick="loadDoc('fitness.html', loader)" />
+    <path id="str" d="M57 310 L170 310 L190 345 L57 345 L57 310 Z" fill="none" stroke="black" stroke-width="2" />
+    <text id="tx1" x="92" y="332" fill="black" onclick="loadDoc('fitness.html', loader)">FITNESS</text>
+    <path id="svg2" d="M52 405 L175 405 L200 450 L52 450 L52 405 Z" fill="yellow"/>
+    <path id="str2" d="M57 410 L170 410 L190 445 L57 445 L57 410 Z" fill="none" stroke="black" stroke-width="2" />
+    <path id="svg3" d="M52 505 L175 505 L200 550 L52 550 L52 505 Z" fill="yellow"/>
+    <path id="str3" d="M57 510 L170 510 L190 545 L57 545 L57 510 Z" fill="none" stroke="black" stroke-width="2" />     
+    <path id="svg4" d="M52 605 L175 605 L200 650 L52 650 L52 605 Z" fill="yellow"/> 
+    <path id="str4" d="M57 610 L170 610 L190 645 L57 645 L57 610 Z" fill="none" stroke="black" stroke-width="2" /> 
+    <path id="svg5" d="M52 705 L175 705 L200 750 L52 750 L52 705 Z" fill="yellow"/>
+    <path id="str5" d="M57 710 L170 710 L190 745 L57 745 L57 710 Z" fill="none" stroke="black" stroke-width="2" />            
+</svg>
+<!-- top nav links -->
+
+ <!-- main content frame -->
+ <div id="main"></div>
+<!-- <iframe src="mainpage.html"></iframe> -->
+</body>
+<script>  
+    var current = "mainpage.html";       
+    function loadDoc(url, select) {                      
+        let xhttp = new XMLHttpRequest();               
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {                
+                select(this);                                              
+            } else if (this.readyState == 4 && this.status == 404){
+                alert("Page not found");
+            }
+        };
+        
+        xhttp.open("GET", url, true);        
+        xhttp.send();                  
+    }     
+
+    function loader(xhttp){                            
+        document.getElementById("main").innerHTML = xhttp.responseText;       
+  
+    }
+    window.onload = function() { 
+        loadDoc(current, loader);
+    } 
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="sidenav.js"></script> 
+</html>

@@ -1,0 +1,52 @@
+html {
+  overflow: hidden;
+  min-height: 100%; }
+
+body {
+  background-color: black;
+  color: white; 
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+iframe {
+  position: absolute;
+  top: 23%;
+  left: 15%;
+  width: 76%;
+  height: 70%;
+  border: none;
+}
+
+#main {
+  position: fixed;
+  top: 23%;
+  left: 15%;
+  width: 76%;
+  height: 70%;
+  border: none;
+}
+
+@font-face {
+  font-family: typ1;
+  src: url(font/RobotoCondensed-Bold.ttf);
+}
+
+text {
+  font-family: typ1;
+  font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+

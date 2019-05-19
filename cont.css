@@ -1,0 +1,44 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+p, li {
+	font-family: typ1;
+	font-size: 15px;
+}
+
+.box {
+	margin-left: 5px;
+	margin-top: 3px;
+	margin-right: 11%;
+	position: relative;	
+}
+.innerwrap {
+	margin-left: auto;	
+	margin-right: auto;
+	width: 55%;	
+	margin-top: 5%;
+}
+
+.innerwrap > div {	
+	border: 1px solid white;
+	text-align: center;				
+}
+
+.m1head {
+	height: 1.8em;
+}
+
+.m1body {
+	padding: 1em;
+}
+
+.root {
+	padding: 1em;
+}
+
+@font-face {
+	font-family: typ1;
+	src: url(font/RobotoCondensed-Bold.ttf);
+}
